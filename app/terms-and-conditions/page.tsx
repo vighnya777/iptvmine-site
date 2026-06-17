@@ -186,7 +186,7 @@ export default function TermsAndConditions() {
           If any provision of these Terms is found to be unenforceable, the remaining provisions will remain in full force.
         </p>
 
-        <p style={{ marginTop: "2rem", paddingTop: "1.5rem", borderTop: "1px solid rgba(255,255,255,0.07)", color: "#5A6478", fontSize: "0.875rem" }}>
+        <p style={{ marginTop: "2rem", paddingTop: "1.5rem", borderTop: "1px solid rgba(255,255,255,0.07)", color: "var(--text-faint)", fontSize: "0.875rem" }}>
           Questions about these Terms? Contact us at <a href="mailto:legal@iptvminepro.app">legal@iptvminepro.app</a>
         </p>
       </LegalPage>
