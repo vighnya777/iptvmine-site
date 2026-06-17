@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
         sections={sections}
       >
         <p>
-          This Privacy Policy describes how <strong style={{ color: "#fff" }}>IPTVMine Pro</strong> ("we", "us", or "our") handles information when you use our Android application and website. By using IPTVMine Pro, you agree to the practices described in this policy.
+          This Privacy Policy describes how <strong style={{ color: "#fff" }}>IPTVMine Pro</strong> (&ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;) handles information when you use our Android application and website. By using IPTVMine Pro, you agree to the practices described in this policy.
         </p>
         <p>
           <strong style={{ color: "var(--teal)" }}>We do not sell your personal data.</strong> We are committed to transparency about what limited information we interact with and how it stays under your control.
@@ -98,7 +98,7 @@ export default function PrivacyPolicy() {
         <ul>
           <li>May be stored temporarily in device memory during a session.</li>
           <li>Is not transmitted to external servers by IPTVMine Pro itself.</li>
-          <li>Note: if your search query is forwarded to a third-party provider extension (e.g. a Vega extension's <code>getSearchPosts</code> function), that extension may make an external HTTP request containing your query to its own server. We have no control over those third-party provider servers.</li>
+          <li>Note: if your search query is forwarded to a third-party provider extension (e.g. a Vega extension&apos;s <code>getSearchPosts</code> function), that extension may make an external HTTP request containing your query to its own server. We have no control over those third-party provider servers.</li>
         </ul>
 
         <h2 id="cookies-analytics">Cookies &amp; Analytics</h2>
@@ -120,9 +120,9 @@ export default function PrivacyPolicy() {
         </p>
         <ul>
           <li><strong style={{ color: "#fff" }}>IPTV Providers / M3U Playlist Hosts:</strong> When the app fetches your configured M3U playlist URLs, those servers may log your IP address and request headers.</li>
-          <li><strong style={{ color: "#fff" }}>Vega-Compatible Extensions:</strong> Extensions are third-party JavaScript/TypeScript scrapers. When an extension fetches content, it communicates with the extension author's chosen website(s). IPTVMine Pro is not responsible for those servers' data practices.</li>
+          <li><strong style={{ color: "#fff" }}>Vega-Compatible Extensions:</strong> Extensions are third-party JavaScript/TypeScript scrapers. When an extension fetches content, it communicates with the extension author&apos;s chosen website(s). IPTVMine Pro is not responsible for those servers&apos; data practices.</li>
           <li><strong style={{ color: "#fff" }}>TMDb / IMDb / Metadata Providers:</strong> Movie and series metadata (titles, posters, synopses, cast information) may be sourced from public APIs such as The Movie Database (TMDb). Their respective privacy policies apply.</li>
-          <li><strong style={{ color: "#fff" }}>External Links:</strong> This website and the app may contain links to third-party websites. Clicking these links will direct you away from IPTVMine Pro, and we are not responsible for those sites' privacy practices.</li>
+          <li><strong style={{ color: "#fff" }}>External Links:</strong> This website and the app may contain links to third-party websites. Clicking these links will direct you away from IPTVMine Pro, and we are not responsible for those sites&apos; privacy practices.</li>
         </ul>
 
         <h2 id="data-security">Data Security</h2>
@@ -130,8 +130,8 @@ export default function PrivacyPolicy() {
           We take reasonable steps to protect information. However, as IPTVMine Pro stores most data locally on your device:
         </p>
         <ul>
-          <li>Your device's built-in security (screen lock, encryption) is the primary protection for locally stored settings.</li>
-          <li>Provider URLs containing authentication tokens should be treated as sensitive — do not share your device's app data with untrusted parties.</li>
+          <li>Your device&apos;s built-in security (screen lock, encryption) is the primary protection for locally stored settings.</li>
+          <li>Provider URLs containing authentication tokens should be treated as sensitive — do not share your device&apos;s app data with untrusted parties.</li>
           <li>We use HTTPS for all network requests made by the app and website.</li>
           <li>No database of user accounts or personal data is maintained by IPTVMine Pro because we do not collect it.</li>
         </ul>
@@ -141,8 +141,8 @@ export default function PrivacyPolicy() {
           Since IPTVMine Pro does not collect personal data, most traditional data-subject rights (access, deletion, portability) are satisfied by the fact that all your data lives on your device and is under your direct control. Specifically:
         </p>
         <ul>
-          <li><strong style={{ color: "#fff" }}>Access &amp; Deletion:</strong> Uninstalling the app removes all locally stored settings. Clearing the app's data in Android Settings achieves the same effect.</li>
-          <li><strong style={{ color: "#fff" }}>Portability:</strong> Your provider list and settings can be exported via Android's backup features.</li>
+          <li><strong style={{ color: "#fff" }}>Access &amp; Deletion:</strong> Uninstalling the app removes all locally stored settings. Clearing the app&apos;s data in Android Settings achieves the same effect.</li>
+          <li><strong style={{ color: "#fff" }}>Portability:</strong> Your provider list and settings can be exported via Android&apos;s backup features.</li>
           <li><strong style={{ color: "#fff" }}>Opt-out:</strong> No opt-out is needed for analytics or marketing because we do not conduct those activities.</li>
           <li>If you believe we have inadvertently collected personal data, please contact us and we will investigate and delete it promptly.</li>
         </ul>
