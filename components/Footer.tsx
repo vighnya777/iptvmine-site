@@ -67,7 +67,7 @@ export default function Footer() {
                 }}>
                 <GithubIcon size={16} />
               </a>
-              <a href="mailto:support@iptvminepro.app" aria-label="Email"
+              <a href="mailto:iptvminepro@gmail.com" aria-label="Email"
                 style={{
                   width: 36, height: 36, borderRadius: 9, display: "flex", alignItems: "center", justifyContent: "center",
                   background: "var(--surface-2)", border: "1px solid var(--border)", color: "var(--text-dim)",
