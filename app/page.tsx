@@ -20,6 +20,17 @@ const legalCards = [
   { href: "/disclaimer", label: "Disclaimer", desc: "Content ownership and liability information.", Icon: AlertTriangle },
 ];
 
+const creators = [
+  {
+    name: "Vighnya",
+    github: "https://github.com/vighnya777",
+  },
+  {
+    name: "Samyak",
+    github: "https://github.com/samyak2403",
+  },
+];
+
 export default function Home() {
   return (
     <div style={{ background: "var(--bg)", overflow: "hidden" }}>
@@ -103,7 +114,7 @@ export default function Home() {
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))", gap: "1.1rem" }}>
-            {features.map(({ Icon, title, desc }, i) => (
+            {features.map(({ Icon, title, desc }) => (
               <div key={title} className="glass" style={{
                 borderRadius: 18,
                 padding: "1.75rem",
@@ -264,55 +275,30 @@ export default function Home() {
       </section>
 
       {/* ============ DEVELOPERS ============ */}
-const creators = [
-  {
-    name: "Vighnya",
-    github: "https://github.com/vighnya777",
-  },
-  {
-    name: "Samyak",
-    github: "https://github.com/samyak2403",
-  },
-];
-
-export default function Home() {
-  return (
-    <div>
-      <section
-        style={{
-          padding: "4rem 1.5rem 6rem",
-          textAlign: "center",
-        }}
-      >
-        <p
-          style={{
-            color: "var(--text-faint)",
-            fontSize: "0.78rem",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-            marginBottom: "1.25rem",
-          }}
-        >
+      <section style={{ padding: "4rem 1.5rem 6rem", textAlign: "center" }}>
+        <p style={{
+          color: "var(--text-faint)",
+          fontSize: "0.78rem",
+          letterSpacing: "0.1em",
+          textTransform: "uppercase",
+          marginBottom: "1.25rem",
+        }}>
           Crafted by
         </p>
 
-        <div
-          style={{
-            display: "flex",
-            gap: "1rem",
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
+        <div style={{
+          display: "flex",
+          gap: "1rem",
+          justifyContent: "center",
+          flexWrap: "wrap",
+        }}>
           {creators.map((creator) => (
             <a
               key={creator.name}
               href={creator.github}
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                textDecoration: "none",
-              }}
+              style={{ textDecoration: "none" }}
             >
               <div
                 style={{
@@ -335,30 +321,25 @@ export default function Home() {
                   e.currentTarget.style.borderColor = "var(--border)";
                 }}
               >
-                <div
-                  style={{
-                    width: 26,
-                    height: 26,
-                    borderRadius: "50%",
-                    background: "linear-gradient(135deg, #00E5C7, #6E5BFF)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "0.75rem",
-                    fontWeight: 700,
-                    color: "#07080B",
-                  }}
-                >
+                <div style={{
+                  width: 26,
+                  height: 26,
+                  borderRadius: "50%",
+                  background: "linear-gradient(135deg, #00E5C7, #6E5BFF)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "0.75rem",
+                  fontWeight: 700,
+                  color: "#07080B",
+                }}>
                   {creator.name[0]}
                 </div>
-
-                <span
-                  style={{
-                    color: "var(--text)",
-                    fontWeight: 600,
-                    fontSize: "0.9rem",
-                  }}
-                >
+                <span style={{
+                  color: "var(--text)",
+                  fontWeight: 600,
+                  fontSize: "0.9rem",
+                }}>
                   {creator.name}
                 </span>
               </div>
