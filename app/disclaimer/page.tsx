@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
+import { Zap, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
@@ -58,26 +59,27 @@ export default function Disclaimer() {
 
         {/* Key callout */}
         <div style={{
-          background: "rgba(0,201,177,0.06)",
-          border: "1px solid rgba(0,201,177,0.2)",
+          background: "rgba(0,229,199,0.06)",
+          border: "1px solid rgba(0,229,199,0.2)",
           borderRadius: 12,
           padding: "1.25rem 1.5rem",
           marginBottom: "1.5rem",
         }}>
-          <p style={{ color: "#00C9B1", fontWeight: 600, margin: "0 0 0.5rem", fontSize: "0.9rem" }}>
-            ⚡ Key Points
+          <p style={{ color: "var(--teal)", fontWeight: 600, margin: "0 0 0.5rem", fontSize: "0.9rem", display: "flex", alignItems: "center", gap: 7 }}>
+            <Zap size={15} strokeWidth={2.2} />
+            Key Points
           </p>
           <ul style={{ margin: 0 }}>
-            <li style={{ color: "#7A8499", fontSize: "0.875rem", marginBottom: "0.3rem", paddingLeft: "1rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "#00C9B1" }}>→</span>
+            <li style={{ color: "var(--text-dim)", fontSize: "0.875rem", marginBottom: "0.4rem", paddingLeft: "1.25rem", position: "relative" }}>
+              <ArrowRight size={13} style={{ position: "absolute", left: 0, top: 3, color: "var(--teal)" }} />
               IPTVMine Pro does not own, host, or produce any movie, TV show, channel, or metadata content.
             </li>
-            <li style={{ color: "#7A8499", fontSize: "0.875rem", marginBottom: "0.3rem", paddingLeft: "1rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "#00C9B1" }}>→</span>
+            <li style={{ color: "var(--text-dim)", fontSize: "0.875rem", marginBottom: "0.4rem", paddingLeft: "1.25rem", position: "relative" }}>
+              <ArrowRight size={13} style={{ position: "absolute", left: 0, top: 3, color: "var(--teal)" }} />
               All content is sourced from third-party providers configured by the user.
             </li>
-            <li style={{ color: "#7A8499", fontSize: "0.875rem", paddingLeft: "1rem", position: "relative" }}>
-              <span style={{ position: "absolute", left: 0, color: "#00C9B1" }}>→</span>
+            <li style={{ color: "var(--text-dim)", fontSize: "0.875rem", paddingLeft: "1.25rem", position: "relative" }}>
+              <ArrowRight size={13} style={{ position: "absolute", left: 0, top: 3, color: "var(--teal)" }} />
               IPTVMine Pro is an information and discovery platform only.
             </li>
           </ul>
@@ -173,7 +175,7 @@ export default function Disclaimer() {
           Some jurisdictions do not allow the exclusion of certain warranties or limitation of liability for consequential or incidental damages, so some of the above limitations may not apply to you.
         </p>
 
-        <p style={{ marginTop: "2rem", paddingTop: "1.5rem", borderTop: "1px solid rgba(255,255,255,0.07)", color: "#5A6478", fontSize: "0.875rem" }}>
+        <p style={{ marginTop: "2rem", paddingTop: "1.5rem", borderTop: "1px solid rgba(255,255,255,0.07)", color: "var(--text-faint)", fontSize: "0.875rem" }}>
           If you have questions about this Disclaimer, contact us at <a href="mailto:legal@iptvminepro.app">legal@iptvminepro.app</a>
         </p>
       </LegalPage>
