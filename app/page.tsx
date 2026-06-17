@@ -20,17 +20,6 @@ const legalCards = [
   { href: "/disclaimer", label: "Disclaimer", desc: "Content ownership and liability information.", Icon: AlertTriangle },
 ];
 
-const creators = [
-  {
-    name: "Vighnya",
-    github: "https://github.com/vighnya777",
-  },
-  {
-    name: "Samyak",
-    github: "https://github.com/samyak2403",
-  },
-];
-
 export default function Home() {
   return (
     <div style={{ background: "var(--bg)", overflow: "hidden" }}>
@@ -114,7 +103,7 @@ export default function Home() {
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))", gap: "1.1rem" }}>
-            {features.map(({ Icon, title, desc }) => (
+            {features.map(({ Icon, title, desc }, i) => (
               <div key={title} className="glass" style={{
                 borderRadius: 18,
                 padding: "1.75rem",
@@ -174,7 +163,7 @@ export default function Home() {
               <p style={{ color: "var(--text-dim)", fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "1.75rem" }}>
                 The full mobile experience — Live TV, Movies, Series, global search, and extension management, optimized for touch.
               </p>
-              <a href="/downloads/IPTVMinePro.zip" download style={{
+              <a href="/downloads/IPTVMinePro.apk" download style={{
                 display: "inline-flex", alignItems: "center", justifyContent: "center", gap: 8, width: "100%",
                 background: "linear-gradient(135deg, #00E5C7, #00A896)", color: "#07080B",
                 padding: "0.9rem 1.5rem", borderRadius: 12, fontWeight: 600,
@@ -276,74 +265,26 @@ export default function Home() {
 
       {/* ============ DEVELOPERS ============ */}
       <section style={{ padding: "4rem 1.5rem 6rem", textAlign: "center" }}>
-        <p style={{
-          color: "var(--text-faint)",
-          fontSize: "0.78rem",
-          letterSpacing: "0.1em",
-          textTransform: "uppercase",
-          marginBottom: "1.25rem",
-        }}>
+        <p style={{ color: "var(--text-faint)", fontSize: "0.78rem", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
           Crafted by
         </p>
-
-        <div style={{
-          display: "flex",
-          gap: "1rem",
-          justifyContent: "center",
-          flexWrap: "wrap",
-        }}>
-          {creators.map((creator) => (
-            <a
-              key={creator.name}
-              href={creator.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 10,
-                  background: "var(--surface)",
-                  border: "1px solid var(--border)",
-                  borderRadius: 100,
-                  padding: "0.6rem 1.4rem",
-                  cursor: "pointer",
-                  transition: "all 0.25s ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-3px)";
-                  e.currentTarget.style.borderColor = "#00E5C7";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.borderColor = "var(--border)";
-                }}
-              >
-                <div style={{
-                  width: 26,
-                  height: 26,
-                  borderRadius: "50%",
-                  background: "linear-gradient(135deg, #00E5C7, #6E5BFF)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "0.75rem",
-                  fontWeight: 700,
-                  color: "#07080B",
-                }}>
-                  {creator.name[0]}
-                </div>
-                <span style={{
-                  color: "var(--text)",
-                  fontWeight: 600,
-                  fontSize: "0.9rem",
-                }}>
-                  {creator.name}
-                </span>
+        <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+          {["Vighnya", "Samyak"].map((name) => (
+            <div key={name} style={{
+              display: "flex", alignItems: "center", gap: 10,
+              background: "var(--surface)", border: "1px solid var(--border)",
+              borderRadius: 100, padding: "0.6rem 1.4rem",
+            }}>
+              <div style={{
+                width: 26, height: 26, borderRadius: "50%",
+                background: "linear-gradient(135deg, #00E5C7, #6E5BFF)",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontSize: "0.75rem", fontWeight: 700, color: "#07080B",
+              }}>
+                {name[0]}
               </div>
-            </a>
+              <span style={{ color: "var(--text)", fontWeight: 600, fontSize: "0.9rem" }}>{name}</span>
+            </div>
           ))}
         </div>
       </section>
