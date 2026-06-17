@@ -1,15 +1,10 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, PlayCircle, Download } from "lucide-react";
-
-const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/privacy-policy", label: "Privacy Policy" },
-  { href: "/terms-and-conditions", label: "Terms & Conditions" },
-  { href: "/disclaimer", label: "Disclaimer" },
-];
+import { NAV_LINKS } from "@/lib/data";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -18,11 +13,31 @@ export default function Header() {
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => setOpen(false), [pathname]);
+  // Close the mobile menu on navigation. Guarding with a ref (rather than a
+  // bare `useEffect(() => setOpen(false), [pathname])`) avoids the
+  // "setState synchronously within an effect" lint warning, since we only
+  // call setOpen when the pathname has actually changed from a previous
+  // render, not unconditionally on every effect run.
+  const prevPathnameRef = useRef(pathname);
+  useEffect(() => {
+    if (prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname;
+      setOpen(false);
+    }
+  }, [pathname]);
+
+  // Lock body scroll while the mobile menu is open.
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <header
@@ -30,8 +45,9 @@ export default function Header() {
         position: "sticky",
         top: 0,
         zIndex: 50,
-        background: scrolled ? "rgba(7,8,11,0.85)" : "rgba(7,8,11,0.4)",
+        background: scrolled ? "rgba(7,8,11,0.85)" : "rgba(7,8,11,0.35)",
         backdropFilter: "blur(20px) saturate(140%)",
+        WebkitBackdropFilter: "blur(20px) saturate(140%)",
         borderBottom: `1px solid ${scrolled ? "var(--border)" : "transparent"}`,
         transition: "all 0.35s ease",
       }}
@@ -64,17 +80,14 @@ export default function Header() {
           >
             <PlayCircle size={20} color="#07080B" strokeWidth={2.4} />
           </div>
-          <span
-            className="font-display"
-            style={{ fontSize: "1.2rem", fontWeight: 700, color: "#fff", letterSpacing: "-0.02em" }}
-          >
+          <span className="font-display" style={{ fontSize: "1.2rem", fontWeight: 700, color: "#fff", letterSpacing: "-0.02em" }}>
             IPTVMine<span style={{ color: "var(--teal)" }}>Pro</span>
           </span>
         </Link>
 
         {/* Desktop nav */}
         <nav style={{ display: "flex", gap: "0.25rem", alignItems: "center" }} className="hidden-mobile">
-          {navLinks.map((l) => {
+          {NAV_LINKS.map((l) => {
             const active = pathname === l.href;
             return (
               <Link
@@ -119,8 +132,9 @@ export default function Header() {
 
         {/* Hamburger */}
         <button
-          onClick={() => setOpen(!open)}
+          onClick={() => setOpen((o) => !o)}
           aria-label="Toggle menu"
+          aria-expanded={open}
           className="show-mobile"
           style={{ background: "none", border: "none", cursor: "pointer", padding: 6, color: "var(--text)" }}
         >
@@ -139,9 +153,9 @@ export default function Header() {
             flexDirection: "column",
             gap: "0.25rem",
           }}
-          className="show-mobile"
+          className="show-mobile fade-in"
         >
-          {navLinks.map((l) => {
+          {NAV_LINKS.map((l) => {
             const active = pathname === l.href;
             return (
               <Link
