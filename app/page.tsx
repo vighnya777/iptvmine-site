@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   Tv, Clapperboard, Search, Puzzle, Gamepad2, Moon,
@@ -18,6 +20,17 @@ const legalCards = [
   { href: "/privacy-policy", label: "Privacy Policy", desc: "How we handle your data and protect your privacy.", Icon: ShieldCheck },
   { href: "/terms-and-conditions", label: "Terms & Conditions", desc: "Rules governing use of IPTVMine Pro.", Icon: FileText },
   { href: "/disclaimer", label: "Disclaimer", desc: "Content ownership and liability information.", Icon: AlertTriangle },
+];
+
+const creators = [
+  {
+    name: "Vighnya",
+    github: "https://github.com/vighnya777",
+  },
+  {
+    name: "Samyak",
+    github: "https://github.com/samyak2403",
+  },
 ];
 
 export default function Home() {
@@ -103,7 +116,7 @@ export default function Home() {
           </div>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))", gap: "1.1rem" }}>
-            {features.map(({ Icon, title, desc }, i) => (
+            {features.map(({ Icon, title, desc }) => (
               <div key={title} className="glass" style={{
                 borderRadius: 18,
                 padding: "1.75rem",
@@ -269,22 +282,54 @@ export default function Home() {
           Crafted by
         </p>
         <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-          {["Vighnya", "Samyak"].map((name) => (
-            <div key={name} style={{
-              display: "flex", alignItems: "center", gap: 10,
-              background: "var(--surface)", border: "1px solid var(--border)",
-              borderRadius: 100, padding: "0.6rem 1.4rem",
-            }}>
-              <div style={{
-                width: 26, height: 26, borderRadius: "50%",
-                background: "linear-gradient(135deg, #00E5C7, #6E5BFF)",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                fontSize: "0.75rem", fontWeight: 700, color: "#07080B",
-              }}>
-                {name[0]}
+          {creators.map((creator) => (
+            <a
+              key={creator.name}
+              href={creator.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 10,
+                  background: "var(--surface)",
+                  border: "1px solid var(--border)",
+                  borderRadius: 100,
+                  padding: "0.6rem 1.4rem",
+                  cursor: "pointer",
+                  transition: "all 0.25s ease",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-3px)";
+                  e.currentTarget.style.borderColor = "#00E5C7";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.style.borderColor = "var(--border)";
+                }}
+              >
+                <div style={{
+                  width: 26,
+                  height: 26,
+                  borderRadius: "50%",
+                  background: "linear-gradient(135deg, #00E5C7, #6E5BFF)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: "0.75rem",
+                  fontWeight: 700,
+                  color: "#07080B",
+                }}>
+                  {creator.name[0]}
+                </div>
+                <span style={{ color: "var(--text)", fontWeight: 600, fontSize: "0.9rem" }}>
+                  {creator.name}
+                </span>
               </div>
-              <span style={{ color: "var(--text)", fontWeight: 600, fontSize: "0.9rem" }}>{name}</span>
-            </div>
+            </a>
           ))}
         </div>
       </section>
