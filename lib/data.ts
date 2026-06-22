@@ -10,7 +10,7 @@ export const SITE = {
   name: "IPTVMine Pro",
   url: "https://iptvminepro.vercel.app",
   githubOrg: "https://github.com/vighnya777/iptvmine-site",
-  githubRepo: "samyak2403/iptvmine-site",
+  githubRepo: "vighnya777/iptvmine-site",
   supportEmail: "support@iptvminepro.app",
   legalEmail: "legal@iptvminepro.app",
 };
